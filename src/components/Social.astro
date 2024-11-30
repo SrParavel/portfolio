@@ -3,4 +3,7 @@ const { site, username } = Astro.props;
 const address = `https://www.${site}.com/${username}`;
 ---
 
-<a class="bg-gray-300 rounded-md px-3 py-2 text-sm" href={address}>{site}</a>
+<a
+    class="bg-gray-300 rounded-md px-3 py-2 text-sm font-bold hover:shadow-sm hover:text-base duration-300"
+    href={address}>{site}</a
+>
