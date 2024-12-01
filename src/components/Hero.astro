@@ -1,4 +1,6 @@
 ---
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import InstagramIcon from "../icons/InstagramIcon.astro";
 import Badge from "./Badge.astro";
 import Contact from "./Contact.astro";
 import Lightbox from "./Lightbox.astro";
@@ -21,9 +23,11 @@ import Social from "./Social.astro";
       >aplicaciones y paginas web</b
     >. Actualmente vivo en Barranquilla, Colombia
   </h2>
-  <div class="flex gap-2 items-start">
+  <div class="flex gap-2 items-start flex-wrap">
     <Contact>Contactame</Contact>
-    <Social site="GitHub" username="SrParavel" />
-    <Social site="Instagram" username="juancamilo_gl" />
+    <Social site="GitHub" username="SrParavel"><GitHubIcon /></Social>
+    <Social site="Instagram" username="juancamilo_gl"
+      ><InstagramIcon />
+    </Social>
   </div>
 </section>

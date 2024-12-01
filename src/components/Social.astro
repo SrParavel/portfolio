@@ -4,7 +4,10 @@ const address = `https://www.${site}.com/${username}`;
 ---
 
 <a
-  class="rounded-full px-4 py-2 text-sm font-normal hover:shadow-sm hover:scale-105 duration-300 ease-in-out border-[1px]"
+  class="rounded-full px-4 py-2 text-xs font-normal hover:shadow-sm hover:scale-105 duration-300 ease-in-out border-[1px] flex gap-2 items-center"
   target="_blank"
-  href={address}>{site}</a
+  href={address}
 >
+  <span>{site}</span>
+  <slot />
+</a>
