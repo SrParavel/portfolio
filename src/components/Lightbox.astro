@@ -13,9 +13,9 @@ const { id, src, alt } = Astro.props;
 
 <div
     id={id}
-    class="absolute inset-0 bg-black bg-opacity-50 justify-center items-center hidden z-50 target:flex target:flex-col p-6 gap-2 backdrop-blur-sm"
+    class="absolute inset-0 bg-black bg-opacity-50 justify-center items-center hidden z-50 target:flex target:flex-col p-6 gap-6 backdrop-blur-sm"
 >
-    <img src={src} alt={alt} class="rounded-md max-w-96" />
+    <img src={src} alt={alt} class="rounded-md max-w-[720px] w-full" />
     <a
         href="#"
         class="text-white text-3xl border-2 rounded-full aspect-square text-center"
