@@ -1,19 +1,20 @@
 ---
 import Badge from "./Badge.astro";
 import Contact from "./Contact.astro";
+import Lightbox from "./Lightbox.astro";
 import Social from "./Social.astro";
 ---
 
 <section class="flex flex-col gap-6 px-6 max-w-screen-md items-start py-6">
     <div class="flex items-center gap-4 flex-wrap">
-        <img class="h-16 rounded-md shadow-md" src="paravel.jpg" alt="" />
+        <Lightbox id="paravel" src="paravel.jpg" alt="paravel picture" />
         <div class="flex flex-col items-start gap-1">
             <h1 class="text-3xl font-bold">Hola, Soy Paravel</h1>
             <Badge>Disponible</Badge>
         </div>
     </div>
     <h2 class="text-xl">
-        Mi nombre es Juan Camilo, pero mis amigos me dicen Paravel 🤣. Soy un
+        Mi nombre es Juan Camilo, pero mis amigos me dicen Paravel. Soy un
         <b>Ingeniero de Sistemas</b> al que le gusta la <b
             >tecnologia y el desarrollo</b
         > de software, y disfruto creanto y disenando <b
