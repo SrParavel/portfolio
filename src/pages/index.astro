@@ -19,7 +19,7 @@ import Lightbox from "../components/Lightbox.astro";
 		/>
 		<title>Portafolio Paravel</title>
 	</head>
-	<body class="lg:flex mx-auto max-w-5xl">
+	<body class="lg:flex mx-auto max-w-5xl text-gray-900 fill-gray-900">
 		<header
 			class="flex flex-col justify-between flex-1 p-6 lg:py-24 gap-4 lg:sticky top-0 lg:h-screen"
 		>
@@ -98,11 +98,10 @@ import Lightbox from "../components/Lightbox.astro";
 </html>
 
 <style is:global>
+	* {
+		box-sizing: border-box;
+	}
 	body {
 		font-family: "Onest Variable", sans-serif;
-	}
-
-	b {
-		font-weight: 600;
 	}
 </style>
