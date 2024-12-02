@@ -1,11 +1,14 @@
 ---
-const { href } = Astro.props;
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {}
+const props = Astro.props;
 ---
 
 <a
+    {...props}
     class="rounded-md px-4 py-2 text-xs hover:shadow-sm hover:scale-105 duration-300 ease-in-out border-[1px] border-gray-300 flex gap-2 items-center"
     target="_blank"
-    href={href}
 >
     <slot />
 </a>
