@@ -1,13 +1,20 @@
 ---
-const { site, username } = Astro.props;
-const address = `https://www.${site}.com/${username}`;
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import InstagramIcon from "../icons/InstagramIcon.astro";
+import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
+import LinkButtonPrimary from "./Forms/LinkButtonPrimary.astro";
+import LinkButtonSecondary from "./Forms/LinkButtonSecondary.astro";
 ---
 
-<a
-  class="rounded-full px-4 py-2 text-xs font-normal hover:shadow-sm hover:scale-105 duration-300 ease-in-out border-[1px] flex gap-2 items-center"
-  target="_blank"
-  href={address}
->
-  <span>{site}</span>
-  <slot />
-</a>
+<section class="flex gap-2">
+  <LinkButtonPrimary
+    href="https://wa.me/573002776266?text=Hola, quiero crear mi pagina web!"
+    >Contacto <WhatsAppIcon />
+  </LinkButtonPrimary>
+  <LinkButtonSecondary href="https://www.github.com/srparavel"
+    ><GitHubIcon /></LinkButtonSecondary
+  >
+  <LinkButtonSecondary href="https://www.instagram.com/juancamilo_gl"
+    ><InstagramIcon /></LinkButtonSecondary
+  >
+</section>

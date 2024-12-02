@@ -8,14 +8,14 @@ const { id, src, alt } = Astro.props;
   <img
     alt={alt}
     src={src}
-    class="h-16 rounded-md hover:shadow-md duration-300 saturate-[10%] hover:saturate-100 hover:scale-105"
+    class="max-w-48 object-cover rounded-md hover:shadow-md duration-300 hover:scale-105"
   />
 </a>
 
 <!-- Contenedor Modal -->
 <div
   id={id}
-  class="absolute invisible inset-0 bg-black bg-opacity-0 flex justify-center items-center z-40 p-6 gap-2 target:visible target:bg-opacity-50 target:backdrop-blur-md group duration-300 ease-in-out"
+  class="fixed invisible inset-0 bg-black bg-opacity-0 flex justify-center items-center z-40 p-6 gap-2 target:visible target:bg-opacity-50 target:backdrop-blur-md group duration-300 ease-in-out"
 >
   <img
     alt={alt}
