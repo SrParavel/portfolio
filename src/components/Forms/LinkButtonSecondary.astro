@@ -1,12 +1,11 @@
 ---
-const { site, username } = Astro.props;
-const address = `https://www.${site}.com/${username}`;
+const { href } = Astro.props;
 ---
 
 <a
     class="rounded-md px-4 py-2 text-xs hover:shadow-sm hover:scale-105 duration-300 ease-in-out border-[1px] border-gray-300 flex gap-2 items-center"
     target="_blank"
-    href={address}
+    href={href}
 >
     <slot />
 </a>
