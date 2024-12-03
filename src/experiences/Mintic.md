@@ -1,6 +1,6 @@
 ---
 title: Docente de desarrollo web
-company: Ministerio de Tecnoloía - Mision Tic
+company: Ministerio de Tecnología - Mision Tic
 from: 2022
 to: 2023
 tags: [JavaScript, React, Node.js, Express, MongoDB]

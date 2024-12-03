@@ -1,26 +1,21 @@
 ---
+import SectionContainer from "./SectionContainer.astro";
+
 const experiences = await Astro.glob("../experiences/*.md");
 ---
 
-<section class="flex flex-col gap-12">
-    <h2 class="font-bold text-3xl">Expeiencia Laboral</h2>
+<SectionContainer title="Experiencia Laboral">
     {
         experiences.map((experience) => (
-            <article class="group">
-                <span class="font-semibold block">
+            <article class="group pb-8">
+                <span class="text-xs font-semibold">
                     {experience.frontmatter.from} - {experience.frontmatter.to}
                 </span>
-                <h3 class="font-bold text-2xl mt-2 inline-block">
-                    {experience.frontmatter.title}
-                </h3>
+                <h3>{experience.frontmatter.title}</h3>
 
-                <p class="font-semibold text-lg mb-2">
-                    {experience.frontmatter.company}
-                </p>
-                <p class="text-xs">
-                    <experience.Content />
-                </p>
+                <h4 class="mb-3">{experience.frontmatter.company}</h4>
+                <experience.Content />
             </article>
         ))
     }
-</section>
+</SectionContainer>
