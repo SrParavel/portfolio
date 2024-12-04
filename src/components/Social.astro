@@ -1,23 +1,26 @@
 ---
-import GitHubIcon from "../icons/GitHubIcon.astro";
-import InstagramIcon from "../icons/InstagramIcon.astro";
-import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
-import LinkButtonPrimary from "./Forms/LinkButtonPrimary.astro";
-import LinkButtonSecondary from "./Forms/LinkButtonSecondary.astro";
+import LinkButton from "./LinkButton.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <section class="flex gap-2">
-  <LinkButtonPrimary
-    href="https://wa.me/573002776266?text=Hola, quiero crear mi pagina web!"
-    >Contacto <WhatsAppIcon />
-  </LinkButtonPrimary>
-  <LinkButtonSecondary
-    href="https://www.github.com/srparavel"
-    aria-label="Ir al perfil de GitHub"><GitHubIcon /></LinkButtonSecondary
-  >
-  <LinkButtonSecondary
-    href="https://www.instagram.com/juancamilo_gl"
-    aria-label="Ir al perfil de Instagram"
-    ><InstagramIcon /></LinkButtonSecondary
-  >
+    <LinkButton
+        class="text-sm"
+        href="https://wa.me/573002776266?text=Hola, quiero crear mi página web! 🚀"
+        aria-label="Contacto"
+        >Contacto
+        <Icon class="size-5" name="mdi:whatsapp" /></LinkButton
+    >
+    <LinkButton
+        href="https://www.github.com/srparavel"
+        variant="secondary"
+        aria-label="GitHub"
+        ><Icon class="size-5" name="mdi:github" />
+    </LinkButton>
+    <LinkButton
+        href="https://www.instagram.com/juancamilo_gl"
+        variant="secondary"
+        aria-label="Instagram"
+        ><Icon class="size-5" name="mdi:instagram" /></LinkButton
+    >
 </section>

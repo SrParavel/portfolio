@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Section from "./Section.astro";
+import { render } from "astro:content";
+import Badge from "./Badge.astro";
+import Technologies from "./Technologies.astro";
+
+const books = await getCollection("experiences");
+---
+
+<Section title="Experiencia Laboral">
+    <ol class="flex flex-col gap-16">
+        {
+            books.map(async (exp) => {
+                const { title, company, from, to, tags } = exp.data;
+                const { Content } = await render(exp);
+
+                return (
+                    <li class="md:grid grid-cols-5 gap-4">
+                        <div class="mb-4 col-span-2">
+                            <h3>{title}</h3>
+                            <h4>{company}</h4>
+                            <p class="text-sm font-semibold">
+                                <time>{from}</time> - <time>{to}</time>
+                            </p>
+                        </div>
+                        <div class="col-span-3 flex flex-col gap-4">
+                            <Content />
+                            <Technologies tags={tags} />
+                        </div>
+                    </li>
+                );
+            })
+        }
+    </ol>
+</Section>

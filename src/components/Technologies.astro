@@ -1,0 +1,20 @@
+---
+import Badge from "./Badge.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<ul class="flex gap-2">
+    {
+        tags.map((tag) => (
+            <li>
+                <Badge>{tag}</Badge>
+            </li>
+        ))
+    }
+</ul>

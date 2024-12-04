@@ -1,0 +1,25 @@
+---
+interface Props {
+    variant?: string;
+    href: string;
+    class?: string;
+    "aria-label"?: string;
+}
+const props = Astro.props;
+const {
+    variant = "primary",
+    class: className,
+    href,
+    "aria-label": aria,
+} = props;
+
+const primary = "bg-gray-800 text-gray-50 fill-gray-50";
+const secondary = "border-2 border-gray-300";
+const style =
+    "px-2 py-1 rounded-md w-fit flex items-center gap-1 hover:scale-105 hover:shadow-sm duration-300 ease-in-out " +
+    (variant === "primary" ? primary : secondary);
+---
+
+<a class:list={[style, className]} {href} target="_blank" aria-label={aria}>
+    <slot />
+</a>
