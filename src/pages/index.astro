@@ -6,6 +6,7 @@ import Experience from "../components/Experience.astro";
 import Hero from "../components/Hero.astro";
 import Social from "../components/Social.astro";
 import Navigation from "../components/Navigation.astro";
+// import Background from "../components/Background.astro";
 ---
 
 <!doctype html>
@@ -23,38 +24,43 @@ import Navigation from "../components/Navigation.astro";
 	</head>
 	<body class="lg:grid lg:grid-cols-3 max-w-7xl mx-auto">
 		<header
-			class="p-8 lg:py-20 top-0 lg:sticky lg:h-screen flex flex-col gap-8 justify-between"
+			class="p-8 lg:py-20 top-0 lg:sticky lg:h-screen flex flex-col justify-between"
 		>
 			<Hero />
 			<Navigation />
 			<Social />
 		</header>
-		<main class="p-8 lg:py-20 lg:col-span-2 flex flex-col gap-16">
-			<About />
+		<main class="p-8 lg:py-20 lg:col-span-2 flex flex-col gap-12">
 			<Experience />
+			<About />
 		</main>
 	</body>
+	<!-- <Background /> -->
 </html>
 
 <style is:global>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
 	body {
 		font-family: "Onest Variable", sans-serif;
+		@apply text-gray-800 fill-gray-800 bg-gray-100;
 	}
+
 	h1 {
-		@apply text-4xl;
-		@apply font-extrabold;
+		@apply text-4xl font-extrabold;
 	}
 
 	h2 {
-		@apply text-2xl;
-		@apply font-bold;
+		@apply text-2xl font-bold;
 	}
 	h3 {
-		@apply text-lg;
-		@apply font-bold;
+		@apply text-lg font-bold;
 	}
 	h4 {
-		@apply text-base;
-		@apply font-semibold;
+		@apply text-base font-semibold;
 	}
 </style>
