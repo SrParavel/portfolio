@@ -1,0 +1,25 @@
+---
+const getColor = (): string => {
+    const letras = "0123456789abcdef";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letras[Math.floor(Math.random() * 16)];
+    }
+    return color;
+};
+
+const colors: string[] = Array.from({ length: 1000 }, getColor);
+---
+
+<div
+    class="grid grid-cols-[repeat(15,1fr)] lg:grid-cols-[repeat(35,1fr)] md:grid-cols-[repeat(25,1fr)] absolute inset-0 -z-50 pointer-events-[full]"
+>
+    {
+        colors.map((color) => (
+            <div
+                style={`background-color: ${color}`}
+                class="relative aspect-square opacity-0 hover:opacity-50 ease-in-out duration-1000 hover:duration-0"
+            />
+        ))
+    }
+</div>

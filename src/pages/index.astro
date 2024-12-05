@@ -6,6 +6,7 @@ import Experience from "../components/Experience.astro";
 import Hero from "../components/Hero.astro";
 import Social from "../components/Social.astro";
 import Navigation from "../components/Navigation.astro";
+// import Background from "../components/Background.astro";
 ---
 
 <!doctype html>
@@ -34,12 +35,18 @@ import Navigation from "../components/Navigation.astro";
 			<Experience />
 		</main>
 	</body>
+	<!-- <Background /> -->
 </html>
 
 <style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
 	body {
 		font-family: "Onest Variable", sans-serif;
 	}
+
 	h1 {
 		@apply text-4xl;
 		@apply font-extrabold;
