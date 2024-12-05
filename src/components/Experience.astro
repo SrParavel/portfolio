@@ -1,36 +1,41 @@
 ---
 import { getCollection } from "astro:content";
-import Section from "./Section.astro";
 import { render } from "astro:content";
-import Badge from "./Badge.astro";
 import Technologies from "./Technologies.astro";
 
 const books = await getCollection("experiences");
 ---
 
-<Section title="Experiencia Laboral">
-    <ol class="flex flex-col gap-16">
+<section class="bg-white p-12 rounded-xl border-b-8 border-gray-400">
+    <h2 class="mb-6">Experiencia Laboral</h2>
+    <ol class="flex flex-col gap-6">
         {
             books.map(async (exp) => {
                 const { title, company, from, to, tags } = exp.data;
                 const { Content } = await render(exp);
 
                 return (
-                    <li class="md:grid grid-cols-5 gap-4">
-                        <div class="mb-4 col-span-2">
-                            <h3>{title}</h3>
-                            <h4>{company}</h4>
-                            <p class="text-sm font-semibold">
-                                <time>{from}</time> - <time>{to}</time>
-                            </p>
-                        </div>
-                        <div class="col-span-3 flex flex-col gap-4">
-                            <Content />
-                            <Technologies tags={tags} />
-                        </div>
+                    <li>
+                        <article class="md:grid grid-cols-5">
+                            <header class="col-span-2 row-span-2 inline-block">
+                                <h3>{title}</h3>
+                                <h4 class="mb-4">{company}</h4>
+                                <p class="text-sm font-semibold">
+                                    <time>{from}</time> - <time>{to}</time>
+                                </p>
+                            </header>
+
+                            <section class="col-span-3 mb-4">
+                                <Content />
+                            </section>
+
+                            <footer class="col-span-3">
+                                <Technologies tags={tags} />
+                            </footer>
+                        </article>
                     </li>
                 );
             })
         }
     </ol>
-</Section>
+</section>
