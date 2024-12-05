@@ -9,7 +9,7 @@ interface Props {
 const { tags } = Astro.props;
 ---
 
-<ul class="flex gap-2">
+<ul class="flex gap-2 flex-wrap">
     {
         tags.map((tag) => (
             <li>
